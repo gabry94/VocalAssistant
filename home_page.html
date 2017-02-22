@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Vocal Assistant - HomePage</title>
+</head>
+
+<body style="height: 100%; width: 100%">    
+    <script type="text/javascript">
+        
+        function start()
+        {
+            var body = document.getElementsByTagName("body")[0];
+            
+            var handler = function(event)
+                                  {
+                                    if (event.keyCode == 32) {
+                                        //code
+                                        window.speechSynthesis.cancel();
+                                    }
+                                  };
+            
+            body.addEventListener("keypress", handler);
+        }
+        
+        start();
+        
+    </script>
+    
+            <table>
+                <tbody>
+                    <tr>
+                        <td>                            
+                            <img src="image.gif" height=100 width=100/>
+                        </td>
+                        
+                        <td>
+                            <h1>Vocal Assistant</h1>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <iframe style="height: 100%; width: 100%" src="http://www.wikipedia.com"/>
+</body>
+</html>

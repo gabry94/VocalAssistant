@@ -1,0 +1,50 @@
+{
+    //Informazioni obbligatiorie extension
+    "manifest_version": 2,
+    "name": "WebVisioHelper",
+    "version": "1.0.0",
+
+    //Informazioni utili
+
+    //"default_locale": "it",
+    "description": "Il plugin aiuta non vedenti e ipovedenti a navigare sul web.",
+    "icons": {
+        "16": "icon16.png"
+    },
+
+    "web_accessible_resources": [
+        "lang/it.js",
+		"application_div.html",
+        "script/InteractionManager.js",
+        "script/Init.js",
+        "script/DivManager.js",
+        "icon16.png",
+        "InitInitializer.js"
+    ],
+
+    "author": "Gabriele Lombari",
+
+    "content_security_policy": "script-src 'self' chrome-extension://dajbmiknmedbbaoiinbadjphegphibcm/; object-src 'self'",
+    
+    "content_scripts": [
+        {
+            "matches": [ "<all_urls>"], //"http://*/*", "https://*/*", "chrome-extension://*/*"
+            "js": [ "Start.js"],
+            "run_at": "document_end"
+        }
+    ],
+
+    "browser_action": {
+
+        "default_icon" :  "icon16.png"
+
+    },
+
+    "permissions": [
+        "activeTab",
+        "tabs",
+        "http://*/*",
+        "https://*/*",
+        "ttsEngine"
+    ]
+}
